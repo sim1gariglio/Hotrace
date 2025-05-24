@@ -12,42 +12,57 @@
 
 #include "hotrace.h"
 
-void	print_hashmap(t_hashmap *hashmap)
-{
-	int	i;
+// void	print_hashmap(t_hashmap *hashmap)
+// {
+// 	int	i;
 
-	i = 0;
-	while (i < hashmap->size)
+// 	i = 0;
+// 	while (i < hashmap->size)
+// 	{
+// 		if (hashmap->array[i].key)
+// 		{
+// 			printf("Keyword: %s\n", hashmap->array[i].key);
+// 			printf("Value: %s\n", hashmap->array[i].value);
+// 		}
+// 		i++;
+// 	}
+// }
+
+void ft_putstr(const char *str)
+{
+	if (str)
 	{
-		if (hashmap->array[i].key)
+		while (*str)
 		{
-			printf("Keyword: %s\n", hashmap->array[i].key);
-			printf("Value: %s\n", hashmap->array[i].value);
+			write(1, str, 1);
+			str++;
 		}
-		i++;
 	}
 }
 
 void	search_keywords(t_hashmap *hashmap)
 {
-	char	*keyword;
-	char	*value;
+    char	*keyword;
+    char	*value;
 
-	keyword = fast_read_line(0,0, NULL, 0);
-	while (keyword != NULL)
-	{
-		if (keyword[0] == '\0')
-		{
-			free(keyword);
-			break ;
-		}
-		value = search_in_hashmap(hashmap, keyword);
-		if (value)
-			printf("%s", value);
-		else
-			printf("%s: Not found.\n", keyword);
-		free(keyword);
-	}
+    keyword = fast_read_line(0,0, NULL, 0);
+    while (keyword != NULL)
+    {
+        if (keyword[0] == '\0')
+        {
+            free(keyword);
+            break ;
+        }
+        value = search_in_hashmap(hashmap, keyword);
+        if (value)
+            ft_putstr(value);
+        else
+        {
+            ft_putstr(keyword);
+            ft_putstr(": Not found.\n");
+        }
+        free(keyword);
+    }
 }
 
 int	i_am_free(t_map *entries, int size)
