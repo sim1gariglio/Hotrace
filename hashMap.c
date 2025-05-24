@@ -19,17 +19,21 @@ int	hash_function(const char *key, int size)
     return (hash % size);
 }
 
-// Create a hash map from the linked list
-t_hashmap	*create_hashmap(t_list *list, int size)
+// Modificata per accettare un array di t_map invece di una lista
+t_hashmap *create_hashmap(t_map *entries, int size)
 {
-    t_hashmap	*hashmap;
-    int			hashmap_size;
-    t_list		*current;
+    t_hashmap   *hashmap;
+    int         hashmap_size;
 
+    // Calcola la dimensione ottimale della tabella hash (70% di occupazione)
     hashmap_size = nearest_power_of_2((size * 10) / 7);
+    
+    // Alloca la struttura hashmap
     hashmap = malloc(sizeof(t_hashmap));
     if (!hashmap)
         return (NULL);
+    
+    // Alloca l'array della tabella hash
     hashmap->array = malloc(sizeof(t_map) * hashmap_size);
     if (!hashmap->array)
     {
@@ -37,6 +41,7 @@ t_hashmap	*create_hashmap(t_list *list, int size)
         return (NULL);
     }
 
+    // Inizializza l'array con NULL
     for (int i = 0; i < hashmap_size; i++)
     {
         hashmap->array[i].key = NULL;
@@ -45,23 +50,66 @@ t_hashmap	*create_hashmap(t_list *list, int size)
 
     hashmap->size = hashmap_size;
 
-    current = list;
-    while (current)
+    // Inserisci tutti gli elementi nell'hashmap
+    for (int i = 0; i < size; i++)
     {
-        int index = hash_function(current->key, hashmap->size);
+        int index = hash_function(entries[i].key, hashmap->size);
 
-        // Handle collisions using linear probing
+        // Gestisci le collisioni con linear probing
         while (hashmap->array[index].key != NULL)
             index = (index + 1) % hashmap->size;
 
-        hashmap->array[index].key = current->key;
-        hashmap->array[index].value = current->value;
-
-        current = current->next;
+        // Inserisci l'elemento nell'hashmap
+        hashmap->array[index].key = entries[i].key;
+        hashmap->array[index].value = entries[i].value;
     }
 
     return (hashmap);
 }
+
+// Create a hash map from the linked list
+// t_hashmap	*create_hashmap(t_list *list, int size)
+// {
+//     t_hashmap	*hashmap;
+//     int			hashmap_size;
+//     t_list		*current;
+
+//     hashmap_size = nearest_power_of_2((size * 10) / 7);
+//     hashmap = malloc(sizeof(t_hashmap));
+//     if (!hashmap)
+//         return (NULL);
+//     hashmap->array = malloc(sizeof(t_map) * hashmap_size);
+//     if (!hashmap->array)
+//     {
+//         free(hashmap);
+//         return (NULL);
+//     }
+
+//     for (int i = 0; i < hashmap_size; i++)
+//     {
+//         hashmap->array[i].key = NULL;
+//         hashmap->array[i].value = NULL;
+//     }
+
+//     hashmap->size = hashmap_size;
+
+//     current = list;
+//     while (current)
+//     {
+//         int index = hash_function(current->key, hashmap->size);
+
+//         // Handle collisions using linear probing
+//         while (hashmap->array[index].key != NULL)
+//             index = (index + 1) % hashmap->size;
+
+//         hashmap->array[index].key = current->key;
+//         hashmap->array[index].value = current->value;
+
+//         current = current->next;
+//     }
+
+//     return (hashmap);
+// }
 
 char	*search_in_hashmap(t_hashmap *hashmap, const char *key)
 {
