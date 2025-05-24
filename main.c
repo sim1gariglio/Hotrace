@@ -1,15 +1,23 @@
-# include "hotrace.h"
+#include "hotrace.h"
 
-int main()
+int	main(void)
 {
-    char *line;
-    long size = 0;
+	char	*line;
+	long	size;
 
-    while ((line = get_next_line(0)) != NULL)
-    {
-        printf("%s", line);
-        free(line);
-        size ++;
-    }
-    return (0);
+	size = 0;
+	line = get_next_line(0);
+	if (line == NULL)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	while ((line) != NULL)
+	{
+		printf("%s", line);
+		free(line);
+		line = get_next_line(0);
+		size ++;
+	}
+	return (0);
 }
