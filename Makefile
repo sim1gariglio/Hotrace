@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 NAME = hotrace
 
-SRCS = main.c\
+SRCS = main.c ft_strcmp.c\
 	   parseInput.c hashMap.c\
 
 OBJS = $(SRCS:.c=.o)
@@ -33,5 +33,7 @@ testGen:
 report: profile testGen
 	@./$(NAME) < input.hrt
 	gprof -lb $(NAME) > profile.txt
+	rm -f $(NAME) input.hrt testGen
+	
 
 .PHONY: all clean fclean re
