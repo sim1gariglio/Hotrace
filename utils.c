@@ -82,17 +82,17 @@ char	*ft_resto(char *old_str)
 	return (returnline);
 }
 
-// size_t	ft_strlen(char *s)
-// {
-// 	size_t	i;
+size_t	ft_strlen(char *s)
+{
+	size_t	i;
 
-// 	if (!s)
-// 		return (0);
-// 	i = 0;
-// 	while (s[i] && s[i] != '\0')
-// 		i++;
-// 	return (i);
-// }
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i] && s[i] != '\0')
+		i++;
+	return (i);
+}
 
 char	*ft_strchr(char *str, int c)
 {

@@ -1,0 +1,119 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 33.13      0.55     0.55                             ft_strlen (utils.c:92 @ 401619)
+ 19.88      0.88     0.33                             add_to_list (parseInput.c:21 @ 401c87)
+ 11.14      1.06     0.18                             ft_strchr (utils.c:106 @ 4019c5)
+  7.23      1.19     0.12                             ft_newstrjoin (utils.c:23 @ 40151f)
+  4.22      1.25     0.07                             ft_correctline (utils.c:39 @ 4016bf)
+  3.61      1.31     0.06                             ft_resto (utils.c:66 @ 401820)
+  3.31      1.37     0.06                             ft_strchr (utils.c:108 @ 4019da)
+  3.01      1.42     0.05                             ft_strlen (utils.c:93 @ 401658)
+  2.41      1.46     0.04                             ft_correctline (utils.c:45 @ 401746)
+  2.41      1.50     0.04                             ft_newstrjoin (utils.c:22 @ 4014f9)
+  1.20      1.52     0.02                             add_to_list (parseInput.c:22 @ 401c96)
+  0.90      1.53     0.01                             hash_function (hashMap.c:17 @ 401dfa)
+  0.60      1.54     0.01                             add_to_list (parseInput.c:20 @ 401c7c)
+  0.60      1.55     0.01                             add_to_list (parseInput.c:21 @ 401ca2)
+  0.60      1.56     0.01                             ft_correctline (utils.c:47 @ 401785)
+  0.60      1.57     0.01                             ft_newstrjoin (utils.c:22 @ 401535)
+  0.60      1.58     0.01                             ft_newstrjoin (utils.c:24 @ 40153f)
+  0.60      1.59     0.01                             ft_newstrjoin (utils.c:25 @ 401559)
+  0.60      1.60     0.01                             ft_newstrjoin (utils.c:24 @ 401585)
+  0.60      1.61     0.01                             ft_strchr (utils.c:110 @ 4019fc)
+  0.60      1.62     0.01                             ft_strchr (utils.c:106 @ 401a08)
+  0.60      1.64     0.01                             ft_strcmp (ft_strcmp.c:19 @ 402147)
+  0.60      1.65     0.01                             hash_function (hashMap.c:18 @ 401e18)
+  0.60      1.66     0.01                             hash_function (hashMap.c:17 @ 401e28)
+  0.30      1.66     0.01                             hash_function (hashMap.c:14 @ 401df2)
+  0.00      1.66     0.00   431329     0.00     0.00  ft_strlen (utils.c:86 @ 4015e0)
+  0.00      1.66     0.00   123583     0.00     0.00  ft_strchr (utils.c:98 @ 401950)
+  0.00      1.66     0.00   102582     0.00     0.00  ft_newstrjoin (utils.c:4 @ 401430)
+  0.00      1.66     0.00    21002     0.00     0.00  ft_correctline (utils.c:32 @ 401680)
+  0.00      1.66     0.00    21002     0.00     0.00  ft_read (get_next_line.c:4 @ 401a20)
+  0.00      1.66     0.00    21002     0.00     0.00  ft_resto (utils.c:60 @ 401800)
+  0.00      1.66     0.00    21002     0.00     0.00  get_next_line (get_next_line.c:29 @ 401b20)
+  0.00      1.66     0.00    11000     0.00     0.00  hash_function (hashMap.c:13 @ 401dd0)
+  0.00      1.66     0.00    10000     0.00     0.00  add_to_list (parseInput.c:5 @ 401be0)
+  0.00      1.66     0.00     1789     0.00     0.00  ft_strcmp (ft_strcmp.c:16 @ 402100)
+  0.00      1.66     0.00     1000     0.00     0.00  search_in_hashmap (hashMap.c:67 @ 402000)
+  0.00      1.66     0.00        1     0.00     0.00  create_hashmap (hashMap.c:24 @ 401e50)
+  0.00      1.66     0.00        1     0.00     0.00  nearest_power_of_2 (hashMap.c:4 @ 401d90)
+  0.00      1.66     0.00        1     0.00     0.00  parse_input (parseInput.c:31 @ 401cd0)
+  0.00      1.66     0.00        1     0.00     0.00  search_keywords (main.c:20 @ 4012a0)
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 0.60% of 1.66 seconds
+
+index % time    self  children    called     name
+                0.00    0.00   21001/431329      ft_resto (utils.c:71 @ 401888) [134]
+                0.00    0.00  205164/431329      ft_newstrjoin (utils.c:16 @ 401498) [103]
+                0.00    0.00  205164/431329      ft_newstrjoin (utils.c:26 @ 40158a) [109]
+[26]     0.0    0.00    0.00  431329         ft_strlen (utils.c:86 @ 4015e0) [26]
+-----------------------------------------------
+                0.00    0.00  123583/123583      ft_read (get_next_line.c:12 @ 401a6f) [117]
+[27]     0.0    0.00    0.00  123583         ft_strchr (utils.c:98 @ 401950) [27]
+-----------------------------------------------
+                0.00    0.00  102582/102582      ft_read (get_next_line.c:22 @ 401aef) [124]
+[28]     0.0    0.00    0.00  102582         ft_newstrjoin (utils.c:4 @ 401430) [28]
+-----------------------------------------------
+                0.00    0.00   21002/21002       get_next_line (get_next_line.c:38 @ 401b90) [173]
+[29]     0.0    0.00    0.00   21002         ft_correctline (utils.c:32 @ 401680) [29]
+-----------------------------------------------
+                0.00    0.00   21002/21002       get_next_line (get_next_line.c:35 @ 401b4d) [170]
+[30]     0.0    0.00    0.00   21002         ft_read (get_next_line.c:4 @ 401a20) [30]
+-----------------------------------------------
+                0.00    0.00   21002/21002       get_next_line (get_next_line.c:39 @ 401ba5) [174]
+[31]     0.0    0.00    0.00   21002         ft_resto (utils.c:60 @ 401800) [31]
+-----------------------------------------------
+                0.00    0.00    1001/21002       search_keywords (main.c:23 @ 4012b9) [235]
+                0.00    0.00   10000/21002       parse_input (parseInput.c:43 @ 401d2e) [203]
+                0.00    0.00   10001/21002       parse_input (parseInput.c:39 @ 401cff) [200]
+[32]     0.0    0.00    0.00   21002         get_next_line (get_next_line.c:29 @ 401b20) [32]
+-----------------------------------------------
+                0.00    0.00    1000/11000       search_in_hashmap (hashMap.c:72 @ 40202c) [223]
+                0.00    0.00   10000/11000       create_hashmap (hashMap.c:51 @ 401f5a) [68]
+[33]     0.0    0.00    0.00   11000         hash_function (hashMap.c:13 @ 401dd0) [33]
+-----------------------------------------------
+                0.00    0.00   10000/10000       parse_input (parseInput.c:54 @ 401d70) [209]
+[34]     0.0    0.00    0.00   10000         add_to_list (parseInput.c:5 @ 401be0) [34]
+-----------------------------------------------
+                0.00    0.00    1789/1789        search_in_hashmap (hashMap.c:77 @ 402061) [226]
+[35]     0.0    0.00    0.00    1789         ft_strcmp (ft_strcmp.c:16 @ 402100) [35]
+-----------------------------------------------
+                0.00    0.00    1000/1000        search_keywords (main.c:31 @ 4012ec) [239]
+[36]     0.0    0.00    0.00    1000         search_in_hashmap (hashMap.c:67 @ 402000) [36]
+-----------------------------------------------
+                0.00    0.00       1/1           main (main.c:55 @ 401387) [183]
+[37]     0.0    0.00    0.00       1         create_hashmap (hashMap.c:24 @ 401e50) [37]
+-----------------------------------------------
+                0.00    0.00       1/1           create_hashmap (hashMap.c:29 @ 401e72) [53]
+[38]     0.0    0.00    0.00       1         nearest_power_of_2 (hashMap.c:4 @ 401d90) [38]
+-----------------------------------------------
+                0.00    0.00       1/1           main (main.c:52 @ 40137a) [182]
+[39]     0.0    0.00    0.00       1         parse_input (parseInput.c:31 @ 401cd0) [39]
+-----------------------------------------------
+                0.00    0.00       1/1           main (main.c:60 @ 4013a0) [185]
+[40]     0.0    0.00    0.00       1         search_keywords (main.c:20 @ 4012a0) [40]
+-----------------------------------------------
+
+Index by function name
+
+  [34] add_to_list (parseInput.c:5 @ 401be0) [17] ft_newstrjoin (utils.c:24 @ 40153f) [1] ft_strlen (utils.c:92 @ 401619)
+  [13] add_to_list (parseInput.c:20 @ 401c7c) [18] ft_newstrjoin (utils.c:25 @ 401559) [8] ft_strlen (utils.c:93 @ 401658)
+   [2] add_to_list (parseInput.c:21 @ 401c87) [19] ft_newstrjoin (utils.c:24 @ 401585) [32] get_next_line (get_next_line.c:29 @ 401b20)
+  [11] add_to_list (parseInput.c:22 @ 401c96) [30] ft_read (get_next_line.c:4 @ 401a20) [33] hash_function (hashMap.c:13 @ 401dd0)
+  [14] add_to_list (parseInput.c:21 @ 401ca2) [31] ft_resto (utils.c:60 @ 401800) [25] hash_function (hashMap.c:14 @ 401df2)
+  [37] create_hashmap (hashMap.c:24 @ 401e50) [6] ft_resto (utils.c:66 @ 401820) [12] hash_function (hashMap.c:17 @ 401dfa)
+  [29] ft_correctline (utils.c:32 @ 401680) [27] ft_strchr (utils.c:98 @ 401950) [23] hash_function (hashMap.c:18 @ 401e18)
+   [5] ft_correctline (utils.c:39 @ 4016bf) [3] ft_strchr (utils.c:106 @ 4019c5) [24] hash_function (hashMap.c:17 @ 401e28)
+   [9] ft_correctline (utils.c:45 @ 401746) [7] ft_strchr (utils.c:108 @ 4019da) [38] nearest_power_of_2 (hashMap.c:4 @ 401d90)
+  [15] ft_correctline (utils.c:47 @ 401785) [20] ft_strchr (utils.c:110 @ 4019fc) [39] parse_input (parseInput.c:31 @ 401cd0)
+  [28] ft_newstrjoin (utils.c:4 @ 401430) [21] ft_strchr (utils.c:106 @ 401a08) [36] search_in_hashmap (hashMap.c:67 @ 402000)
+  [10] ft_newstrjoin (utils.c:22 @ 4014f9) [35] ft_strcmp (ft_strcmp.c:16 @ 402100) [40] search_keywords (main.c:20 @ 4012a0)
+   [4] ft_newstrjoin (utils.c:23 @ 40151f) [22] ft_strcmp (ft_strcmp.c:19 @ 402147)
+  [16] ft_newstrjoin (utils.c:22 @ 401535) [26] ft_strlen (utils.c:86 @ 4015e0)
