@@ -41,34 +41,49 @@ static t_map	*shrink_entries(t_map *entries, int count)
 	return (final_entries);
 }
 
-void	parse_input(t_map **entries, int *size, int capacity, int count)
+static int	read_key_value_pair(t_map *entries, int count)
 {
 	char	*key;
 	char	*val;
 
+	key = fast_read_line(0, 0, 0, 0);
+	if (!key || key[0] == '\0')
+	{
+		free(key);
+		return (-1);
+	}
+	val = fast_read_line(0, 0, 0, 0);
+	if (!val)
+	{
+		free(key);
+		return (-1);
+	}
+	entries[count].key = key;
+	entries[count].value = val;
+	return (0);
+}
+
+static void	process_input_pairs(t_map **entries, int *capacity,
+	int *count)
+{
+	while (1)
+	{
+		if (read_key_value_pair(*entries, *count) == -1)
+			break ;
+		(*count)++;
+		if (*count >= *capacity)
+			*entries = expand_entries(*entries, capacity, *count);
+		if (!*entries)
+			return ;
+	}
+}
+
+void	parse_input(t_map **entries, int *size, int capacity, int count)
+{
 	*entries = malloc(capacity * sizeof(t_map));
 	if (!*entries)
 		return ;
-	while (1)
-	{
-		key = fast_read_line(0, 0, 0, 0);
-		if (!key || key[0] == '\0')
-		{
-			free(key);
-			break ;
-		}
-		val = fast_read_line(0, 0, 0, 0);
-		if (!val)
-		{
-			free(key);
-			break ;
-		}
-		if (count >= capacity)
-			*entries = expand_entries(*entries, &capacity, count);
-		(*entries)[count].key = key;
-		(*entries)[count].value = val;
-		count++;
-	}
+	process_input_pairs(entries, &capacity, &count);
 	if (count < capacity)
 		*entries = shrink_entries(*entries, count);
 	*size = count;

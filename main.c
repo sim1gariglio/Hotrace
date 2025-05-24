@@ -7,7 +7,6 @@ void	ft_putstr(const char *s)
 	while (*s)
 		write(1, s++, 1);
 	write(1, "\n", 1);
-
 }
 
 void	search_keywords(t_hashmap *hashmap)
@@ -38,10 +37,10 @@ void	search_keywords(t_hashmap *hashmap)
 void	free_hashmap(t_hashmap *hashmap)
 {
 	int	i;
-	
+
 	i = 0;
 	if (!hashmap)
-	return ;
+		return ;
 	while (i < hashmap->size)
 	{
 		free(hashmap->array[i].key);
@@ -55,10 +54,10 @@ void	free_hashmap(t_hashmap *hashmap)
 void	free_map(t_map *entries, int size)
 {
 	int	i;
-	
+
 	i = 0;
 	if (!entries)
-	return ;
+		return ;
 	while (i < size)
 	{
 		free(entries[i].key);
