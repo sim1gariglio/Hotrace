@@ -14,7 +14,7 @@ void	search_keywords(t_hashmap *hashmap)
 {
 	t_map	tmp;
 
-	tmp.key = fast_read_line(0, 0);
+	tmp.key = fast_read_line(0, 0, 0, 0);
 	while (tmp.key != NULL)
 	{
 		if (tmp.key[0] == '\0')
@@ -31,7 +31,7 @@ void	search_keywords(t_hashmap *hashmap)
 			ft_putstr(": Not found.\n");
 		}
 		free(tmp.key);
-		tmp.key = fast_read_line(0, 0);
+		tmp.key = fast_read_line(0, 0, 0, 0);
 	}
 }
 
