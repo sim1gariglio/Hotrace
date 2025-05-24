@@ -23,4 +23,10 @@ fclean: clean
 
 re: fclean all 
 
+test:
+	make re
+	rm -f file.txt
+	@rm -f a.out
+	gcc gen.c && ./a.out > file.txt && ./hotrace < file.txt
+
 .PHONY: all clean fclean re
