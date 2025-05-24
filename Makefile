@@ -21,6 +21,17 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
-re: fclean all 
+re: fclean all
+
+profile: CFLAGS += -pg -O0 -fno-inline -fno-builtin
+profile: re
+
+testGen:
+	cc gen.c -o testGen
+	./testGen > input.hrt
+
+report: profile testGen
+	@./$(NAME) < input.hrt
+	gprof -lb $(NAME) > profile.txt
 
 .PHONY: all clean fclean re

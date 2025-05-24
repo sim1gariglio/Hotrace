@@ -30,7 +30,7 @@ void search_keywords(t_hashmap *hashmap)
 
         char *value = search_in_hashmap(hashmap, keyword);
         if (value)
-            printf("%s", value);
+            printf("%s\n", value);
         else
             printf("%s: Not found.\n", keyword);
 
