@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 18:55:11 by mruggier          #+#    #+#             */
-/*   Updated: 2025/05/24 18:55:13 by mruggier         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:14:52 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_putstr(const char *s)
 		return ;
 	while (*s)
 		write(1, s++, 1);
-	write(1, "\n", 1);
 }
 
 void	search_keywords(t_hashmap *hashmap)
@@ -35,7 +34,10 @@ void	search_keywords(t_hashmap *hashmap)
 		}
 		tmp.value = search_in_hashmap(hashmap, tmp.key);
 		if (tmp.value)
+		{
 			ft_putstr(tmp.value);
+			write(1, "\n", 1);
+		}
 		else
 		{
 			ft_putstr(tmp.key);
