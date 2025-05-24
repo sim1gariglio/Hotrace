@@ -1,0 +1,71 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 29.73      0.11     0.11                             fast_read_line (parseInput.c:94 @ 401e78)
+ 16.22      0.17     0.06                             fast_read_line (parseInput.c:93 @ 401e8e)
+  8.11      0.20     0.03                             fast_read_line (parseInput.c:100 @ 401ead)
+  8.11      0.23     0.03                             fast_read_line (parseInput.c:103 @ 401ec5)
+  5.41      0.25     0.02                             fast_read_line (parseInput.c:79 @ 401dcf)
+  5.41      0.27     0.02                             fast_read_line (parseInput.c:81 @ 401dee)
+  5.41      0.29     0.02                             fast_read_line (parseInput.c:119 @ 401f5f)
+  5.41      0.31     0.02                             fast_read_line (parseInput.c:118 @ 401f75)
+  5.41      0.33     0.02                             hash_function (hashMap.c:18 @ 402328)
+  2.70      0.34     0.01                             fast_read_line (parseInput.c:93 @ 401e65)
+  2.70      0.35     0.01                             fast_read_line (parseInput.c:118 @ 401f4c)
+  2.70      0.36     0.01                             hash_function (hashMap.c:17 @ 40230a)
+  2.70      0.37     0.01                             hash_function (hashMap.c:17 @ 402338)
+  0.00      0.37     0.00    21002     0.00     0.00  fast_read_line (parseInput.c:60 @ 401d50)
+  0.00      0.37     0.00    11000     0.00     0.00  hash_function (hashMap.c:13 @ 4022e0)
+  0.00      0.37     0.00     1723     0.00     0.00  ft_strcmp (ft_strcmp.c:16 @ 402630)
+  0.00      0.37     0.00     1000     0.00     0.00  search_in_hashmap (hashMap.c:115 @ 402530)
+  0.00      0.37     0.00        1     0.00     0.00  create_hashmap (hashMap.c:24 @ 402360)
+  0.00      0.37     0.00        1     0.00     0.00  nearest_power_of_2 (hashMap.c:4 @ 4022a0)
+  0.00      0.37     0.00        1     0.00     0.00  parse_input (parseInput.c:127 @ 401fb0)
+  0.00      0.37     0.00        1     0.00     0.00  search_keywords (main.c:20 @ 4012a0)
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 2.70% of 0.37 seconds
+
+index % time    self  children    called     name
+                0.00    0.00    1001/21002       search_keywords (main.c:20 @ 4012a0) [21]
+                0.00    0.00   10000/21002       parse_input (parseInput.c:141 @ 40203f) [257]
+                0.00    0.00   10001/21002       parse_input (parseInput.c:137 @ 40200d) [253]
+[14]     0.0    0.00    0.00   21002         fast_read_line (parseInput.c:60 @ 401d50) [14]
+-----------------------------------------------
+                0.00    0.00    1000/11000       search_in_hashmap (hashMap.c:120 @ 40255c) [307]
+                0.00    0.00   10000/11000       create_hashmap (hashMap.c:56 @ 40246a) [53]
+[15]     0.0    0.00    0.00   11000         hash_function (hashMap.c:13 @ 4022e0) [15]
+-----------------------------------------------
+                0.00    0.00    1723/1723        search_in_hashmap (hashMap.c:125 @ 402591) [310]
+[16]     0.0    0.00    0.00    1723         ft_strcmp (ft_strcmp.c:16 @ 402630) [16]
+-----------------------------------------------
+                0.00    0.00    1000/1000        search_keywords (main.c:31 @ 4012ea) [323]
+[17]     0.0    0.00    0.00    1000         search_in_hashmap (hashMap.c:115 @ 402530) [17]
+-----------------------------------------------
+                0.00    0.00       1/1           main (main.c:81 @ 401387) [223]
+[18]     0.0    0.00    0.00       1         create_hashmap (hashMap.c:24 @ 402360) [18]
+-----------------------------------------------
+                0.00    0.00       1/1           create_hashmap (hashMap.c:29 @ 402382) [39]
+[19]     0.0    0.00    0.00       1         nearest_power_of_2 (hashMap.c:4 @ 4022a0) [19]
+-----------------------------------------------
+                0.00    0.00       1/1           main (main.c:77 @ 40137a) [222]
+[20]     0.0    0.00    0.00       1         parse_input (parseInput.c:127 @ 401fb0) [20]
+-----------------------------------------------
+                0.00    0.00       1/1           main (main.c:97 @ 401410) [232]
+[21]     0.0    0.00    0.00       1         search_keywords (main.c:20 @ 4012a0) [21]
+                0.00    0.00    1001/21002       fast_read_line (parseInput.c:60 @ 401d50) [14]
+-----------------------------------------------
+
+Index by function name
+
+  [18] create_hashmap (hashMap.c:24 @ 402360) [3] fast_read_line (parseInput.c:100 @ 401ead) [12] hash_function (hashMap.c:17 @ 40230a)
+  [14] fast_read_line (parseInput.c:60 @ 401d50) [4] fast_read_line (parseInput.c:103 @ 401ec5) [9] hash_function (hashMap.c:18 @ 402328)
+   [5] fast_read_line (parseInput.c:79 @ 401dcf) [11] fast_read_line (parseInput.c:118 @ 401f4c) [13] hash_function (hashMap.c:17 @ 402338)
+   [6] fast_read_line (parseInput.c:81 @ 401dee) [7] fast_read_line (parseInput.c:119 @ 401f5f) [19] nearest_power_of_2 (hashMap.c:4 @ 4022a0)
+  [10] fast_read_line (parseInput.c:93 @ 401e65) [8] fast_read_line (parseInput.c:118 @ 401f75) [20] parse_input (parseInput.c:127 @ 401fb0)
+   [1] fast_read_line (parseInput.c:94 @ 401e78) [16] ft_strcmp (ft_strcmp.c:16 @ 402630) [17] search_in_hashmap (hashMap.c:115 @ 402530)
+   [2] fast_read_line (parseInput.c:93 @ 401e8e) [15] hash_function (hashMap.c:13 @ 4022e0) [21] search_keywords (main.c:20 @ 4012a0)
