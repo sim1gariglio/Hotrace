@@ -9,13 +9,13 @@ void parse_input(t_map **entries, int *size, int capacity, int count)
     
     // Leggi e rialloca all'occorrenza
     while (1) {
-        char *keyword = fast_read_line(0, 0);
+        char *keyword = fast_read_line(0, 0, 0, 0);
         if (!keyword || keyword[0] == '\0') {
             free(keyword);
             break;
         }
         
-        char *value = fast_read_line(0, 0);
+        char *value = fast_read_line(0, 0, 0, 0);
         if (!value) {
             free(keyword);
             break;
