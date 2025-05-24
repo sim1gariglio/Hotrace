@@ -26,7 +26,7 @@ void	add_to_list(t_list **list, char *keyword, char *value, int *size)
     (*size)++; // Increment the size counter
 }
 
-// Parse input and populate the linked list
+//  Parse input and populate the linked list
 // void	parse_input(t_list **list, int *size)
 // {
 //     char	*keyword;
