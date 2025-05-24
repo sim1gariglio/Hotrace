@@ -1,26 +1,34 @@
 #include "hotrace.h"
 
-void	print_hashmap(t_hashmap *hashmap)
-{
-	int i;
+// void	print_hashmap(t_hashmap *hashmap)
+// {
+// 	int i;
 
-	i = 0;
-	while (i < hashmap->size)
-	{
-		if (hashmap->array[i].key)
-		{
-			printf("Keyword: %s\n", hashmap->array[i].key);
-			printf("Value: %s\n", hashmap->array[i].value);
-		}
-		i++;
-	}
+// 	i = 0;
+// 	while (i < hashmap->size)
+// 	{
+// 		if (hashmap->array[i].key)
+// 		{
+// 			printf("Keyword: %s\n", hashmap->array[i].key);
+// 			printf("Value: %s\n", hashmap->array[i].value);
+// 		}
+// 		i++;
+// 	}
+// }
+
+void	ft_putstr(const char *s)
+{
+    if (!s)
+        return;
+    while (*s)
+        write(1, s++, 1);
 }
 
 void search_keywords(t_hashmap *hashmap)
 {
     char *keyword;
 
-    while ((keyword = fast_read_line()) != NULL)
+    while ((keyword = fast_read_line(0, 0)) != NULL)
     {
         if (keyword[0] == '\0')
         {
@@ -29,36 +37,16 @@ void search_keywords(t_hashmap *hashmap)
         }
 
         char *value = search_in_hashmap(hashmap, keyword);
-        if (value)
-            printf("%s", value);
-        else
-            printf("%s: Not found.\n", keyword);
-
+		if (value)
+			ft_putstr(value);
+		else
+		{
+			ft_putstr(keyword);
+			ft_putstr(": Not found.\n");
+		}
         free(keyword);
     }
 }
-
-// void	search_keywords(t_hashmap *hashmap)
-// {
-// 	char *keyword;
-
-// 	while ((keyword = get_next_line(0)) != NULL)
-// 	{
-// 		if (keyword[0] == '\n')
-// 		{
-// 			free(keyword);
-// 			break;
-// 		}
-
-// 		char *value = search_in_hashmap(hashmap, keyword);
-// 		if (value)
-// 			printf("%s", value);
-// 		else
-// 			printf("%s: Not found.\n", keyword); // Print "Not found" if the keyword is missing
-
-// 		free(keyword);
-// 	}
-// }
 
 int	main(void)
 {
@@ -73,14 +61,9 @@ int	main(void)
 	i = 0;
 	size = 0;
 	list = NULL;
-	// Step 1: Parse input into a linked list and get the size
 	parse_input(&entries, &size);
-
-	// // Step 2: Create the hash map
-	// hashmap = create_hashmap(list, size);
 	hashmap = create_hashmap(entries, size);
     if (!hashmap) {
-        // Libera la memoria e gestisci l'errore
         for (int i = 0; i < size; i++) {
             free(entries[i].key);
             free(entries[i].value);
@@ -88,14 +71,8 @@ int	main(void)
         free(entries);
         return 1;
     }
-
-    // Non hai più bisogno dell'array entries dopo aver creato l'hashmap
-    // perché le chiavi e i valori sono stati trasferiti all'hashmap
     free(entries);
-
-	// Step 3: Print the hash map for testing
 	search_keywords(hashmap);
-
 	while (i < hashmap->size)
 	{
 		if (hashmap->array[i].key)
@@ -107,6 +84,5 @@ int	main(void)
 	}
 	free(hashmap->array);
 	free(hashmap);
-
 	return (0);
 }

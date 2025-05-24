@@ -42,7 +42,7 @@ int		hash_function(const char *key, int size);
 int		nearest_power_of_2(int size);
 int		ft_strcmp(const char *s1, const char *s2);
 void	parse_input(t_map **entries, int *size);
-char	*fast_read_line(void); 
+char	*fast_read_line(int capacity, int length); 
 
 
 #endif

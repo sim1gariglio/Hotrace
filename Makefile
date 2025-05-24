@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 NAME = hotrace
 
-SRCS = main.c utils.c get_next_line.c \
+SRCS = main.c readline.c \
 	   parseInput.c hashMap.c ft_strcmp.c\
 
 OBJS = $(SRCS:.c=.o)
