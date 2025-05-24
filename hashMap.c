@@ -1,14 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hashMap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/24 18:55:07 by mruggier          #+#    #+#             */
+/*   Updated: 2025/05/24 18:55:10 by mruggier         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "hotrace.h"
-
-int	nearest_power_of_2(int size)
-{
-	int	power;
-
-	power = 1;
-	while (power < size)
-		power *= 2;
-	return (power);
-}
 
 int	hash_function(const char *key, int size)
 {

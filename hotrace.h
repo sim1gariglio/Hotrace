@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hotrace.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/24 18:55:34 by mruggier          #+#    #+#             */
+/*   Updated: 2025/05/24 19:00:12 by mruggier         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HOTRACE_H
 # define HOTRACE_H
 # include <stdlib.h>
@@ -38,5 +50,6 @@ int			nearest_power_of_2(int size);
 int			ft_strcmp(const char *s1, const char *s2);
 void		parse_input(t_map **entries, int *size, int capacity, int count);
 char		*fast_read_line(int capacity, int length, int status, int result);
+int			rl_reload_buffer(char *buffer, int *position, int *bytes_read);
 
 #endif

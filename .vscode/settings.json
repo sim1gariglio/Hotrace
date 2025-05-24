@@ -9,6 +9,7 @@
         "ranges": "c",
         "span": "c",
         "utility": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "hotrace.h": "c"
     }
 }

@@ -1,11 +1,16 @@
-#include "hotrace.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   readline.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/24 18:55:18 by mruggier          #+#    #+#             */
+/*   Updated: 2025/05/24 18:55:20 by mruggier         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int	rl_reload_buffer(char *buffer, int *position, int *bytes_read)
-{
-	*bytes_read = read(0, buffer, BUFFER_SIZE);
-	*position = 0;
-	return (*bytes_read);
-}
+#include "hotrace.h"
 
 static char	*rl_expand_line(char *line, int *capacity, int length)
 {
