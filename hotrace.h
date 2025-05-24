@@ -36,25 +36,21 @@ typedef struct s_hashmap
 	int		size;
 }	t_hashmap;
 
-t_hashmap *create_hashmap(t_map *entries, int size);
-char	*search_in_hashmap(t_hashmap *hashmap, const char *key);
-int		hash_function(const char *key, int size);
-int		nearest_power_of_2(int size);
-int		ft_strcmp(const char *s1, const char *s2);
-void    parse_input(t_map **entries, int *size, int capacity);
-char	*fast_read_line(void); 
-
-// =======
-// int			ft_strcmp(const char *s1, const char *s2);
-// void		init_and_fill_hashmap(t_hashmap *hashmap, t_map *entries,
-// 				int size, int hashmap_size);
-// t_hashmap	*create_hashmap(t_map *entries, int size);
-// char		*search_in_hashmap(t_hashmap *hashmap, const char *key);
-// int			hash_function(const char *key, int size);
-// int			nearest_power_of_2(int size);
-// void		parse_input(t_map **entries, int *size);
-// char		*fast_read_line(void);
-// >>>>>>> norminetting
-
-
+t_hashmap	*create_hashmap(t_map *entries, int size);
+char		*search_in_hashmap(t_hashmap *hashmap, const char *key);
+int			hash_function(const char *key, int size);
+int			nearest_power_of_2(int size);
+int			ft_strcmp(const char *s1, const char *s2);
+void		parse_input(t_map **entries, int *size, int capacity);
+char		*fast_read_line(int capacity, int length, char *result, int i);
+int			handle_capacity(t_map **entries, t_map tmp,
+				int count, int *capacity);
+int			is_valid_keyword(char *keyword);
+int			is_valid_value(char *value, char *keyword);
+int			resize_entries_array(t_map **entries, t_map tmp, int count,
+				int *capacity);
+void		free_strings(char *s1, char *s2);
+int			process_char(char **line, int *length, int *capacity);
+void		init_and_fill_hashmap(t_hashmap *hashmap, t_map *entries,
+				int size, int hashmap_size);
 #endif

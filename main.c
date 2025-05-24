@@ -33,7 +33,7 @@ void	search_keywords(t_hashmap *hashmap)
 	char	*keyword;
 	char	*value;
 
-	keyword = fast_read_line();
+	keyword = fast_read_line(0,0, NULL, 0);
 	while (keyword != NULL)
 	{
 		if (keyword[0] == '\0')

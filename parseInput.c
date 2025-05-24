@@ -15,7 +15,6 @@
 void	parse_input(t_map **entries, int *size, int capacity)
 {
 	int		count;
-	int		i;
 	t_map	tmp;
 
 	count = 0;
@@ -27,7 +26,7 @@ void	parse_input(t_map **entries, int *size, int capacity)
 		tmp.key = fast_read_line(0, 0, NULL, 0);
 		if (!is_valid_keyword(tmp.key))
 			break ;
-		tmp.value = fast_read_line();
+		tmp.value = fast_read_line(0, 0, NULL, 0);
 		if (!is_valid_value(tmp.value, tmp.key))
 			break ;
 		if (!handle_capacity(entries, tmp, count, &capacity))
