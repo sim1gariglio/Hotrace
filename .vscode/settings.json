@@ -8,6 +8,8 @@
         "initializer_list": "c",
         "ranges": "c",
         "span": "c",
-        "utility": "c"
+        "utility": "c",
+        "hotrace.h": "c",
+        "type_traits": "c"
     }
 }
