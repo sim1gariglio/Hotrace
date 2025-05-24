@@ -1,10 +1,7 @@
 #include "hotrace.h"
 
-void parse_input(t_map **entries, int *size)
+void parse_input(t_map **entries, int *size, int capacity, int count)
 {
-    int capacity = 1024;  // Inizia con una capacità ragionevole
-    int count = 0;
-    
     // Alloca l'array iniziale
     *entries = malloc(capacity * sizeof(t_map));
     if (!*entries)

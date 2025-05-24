@@ -41,7 +41,7 @@ char	*search_in_hashmap(t_hashmap *hashmap, const char *key);
 int		hash_function(const char *key, int size);
 int		nearest_power_of_2(int size);
 int		ft_strcmp(const char *s1, const char *s2);
-void	parse_input(t_map **entries, int *size);
+void	parse_input(t_map **entries, int *size, int capacity, int count);
 char	*fast_read_line(int capacity, int length); 
 
 
