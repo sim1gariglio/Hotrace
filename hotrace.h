@@ -3,6 +3,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <string.h>
 # define BUFFER_SIZE 512
 
 typedef struct s_list
@@ -30,7 +31,7 @@ char	*ft_read(char *old_str, int fd);
 char	*ft_newstrjoin(char *old_str, char *buf);
 char	*ft_correctline(char *old_str);
 char	*ft_resto(char *old_str);
-size_t	ft_strlen(char *str);
+size_t	ft_ft_strlen(char *str);
 char	*ft_strchr(char *s, int c);
 void	add_to_list(t_list **list, char *keyword, char *value, int *size);
 int		list_size(t_list *list);
