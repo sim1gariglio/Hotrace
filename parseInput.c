@@ -1,6 +1,6 @@
 #include "hotrace.h"
 
-void parse_input(t_map **entries, int *size, int capacity, int count)
+static t_map	*expand_entries(t_map *entries, int *capacity, int count)
 {
     // Alloca l'array iniziale
     *entries = malloc(capacity * sizeof(t_map));
