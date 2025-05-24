@@ -1,12 +1,12 @@
 #include "hotrace.h"
 
-// Add a new node to the linked list and update the size
-void	add_to_list(t_map **list, char *keyword, char *value, int *size)
+// Add a new node to the linked list
+void	add_to_list(t_list **list, char *keyword, char *value, int *size)
 {
-    t_map	*new_node;
-    t_map	*current;
+    t_list	*new_node;
+    t_list	*current;
 
-    new_node = malloc(sizeof(t_map));
+    new_node = malloc(sizeof(t_list));
     if (!new_node)
         return;
     new_node->key = keyword;
@@ -14,23 +14,25 @@ void	add_to_list(t_map **list, char *keyword, char *value, int *size)
     new_node->next = NULL;
 
     if (*list == NULL)
-        *list = new_node;
+        *list = new_node; // First node in the list
     else
     {
         current = *list;
         while (current->next)
             current = current->next;
-        current->next = new_node;
+        current->next = new_node; // Append to the end of the list
     }
 
-    (*size)++;
+    (*size)++; // Increment the size counter
 }
 
 // Parse input and populate the linked list
-void	parse_input(t_map **list, int *size)
+void	parse_input(t_list **list, int *size)
 {
     char	*keyword;
     char	*value;
+
+    *size = 0; // Initialize the size counter
 
     while (1)
     {
